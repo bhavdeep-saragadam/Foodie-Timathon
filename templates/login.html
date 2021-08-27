@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+
+
+
+{% block content %}
+
+
+<main class="form-signin">
+	<form method="POST">
+		{% csrf_token %}
+
+	  <h1>Login</h1>
+      
+	  <div class="form-floating">
+	<input type="text" class="form-control jumbotron" name="username" placeholder="Username" />
+	   
+	  </div>
+	  <div class="form-floating">
+	<input type="password" class="form-control jumbotron" name="password" placeholder="Password" />
+	    
+	  </div>
+
+	  <input type="submit" value="Submit" class="btn btn-primary" />
+
+	 
+	</form>
+	<a href="{% url 'register-page'%}" class="link-info">Don't Have A Account Sign Up Here!</a>
+      </main>
+      
+
+{% endblock %}

@@ -1,0 +1,50 @@
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+<header class="p-3 mb-3 border-bottom">
+	<div class="container">
+	  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+	    <a href="{% url 'home-page' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+	      <h2>😋😋</h2>
+	    </a>
+	    {% if user.is_authenticated %}
+	    
+	    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+	      <li><a href="#" class="nav-link px-2 link-dark">Inbox</a></li>
+	      <li><a href="#" class="nav-link px-2 link-dark">Feed</a></li>
+	      <li><a href="{% url 'user-posts' %}" class="nav-link px-2 link-dark">Your Posts</a></li>
+	      <li><a href="#" class="nav-link px-2 link-dark">Todo-List</a></li>
+	      {% else %}
+	      <a href="{% url 'login-page' %}" class="btn btn-outline-primary">Login</a>
+	    {% endif %}
+
+	 </ul>
+
+
+
+
+    
+	    {% if user.is_authenticated %}
+	    <div class="dropdown text-end">
+	      <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+		<img src="https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png" alt="mdo" width="32" height="32" class="rounded-circle">
+	      </a>
+	      <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+		      
+		<li><a class="dropdown-item" href="#">Hello, {{request.user.username}}</a></li>
+		
+		<li><a class="dropdown-item" href="{% url 'post' %}">Post</a></li>
+
+		<li><a class="dropdown-item" href="{% url 'account' %}">Profile</a></li>
+		<li><hr class="dropdown-divider"></li>
+		<li><a class="dropdown-item" href="{% url 'logOut' %}">Sign out</a></li>
+	      </ul>
+		{% endif %}
+ 
+	    </div>
+	  </div>
+	</div>
+      </header>
+      

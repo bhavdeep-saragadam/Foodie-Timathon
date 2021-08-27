@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+<style>
+	.card {
+		margin: 20px;
+	}
+</style>
+<div class="p-5 mb-4 bg-light rounded-3 flex" style="background: url('https://img.freepik.com/free-photo/pattern-grapefruit-citrus-slices-pastel-backdrop_23-2148102045.jpg?size=626&ext=jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+	<div class="container-fluid py-5 " >
+	  <h1 class="display-5 fw-bold d-flex justify-content-center">Foodie😋😋</h1>
+	  <p class="d-flex justify-content-center">Social Media For Food Lovers!</p>
+	  <form method="POST" >
+		  <div class="input-group">
+		<input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+	  aria-describedby="search-addon" />
+	</div>
+	  <input type="submit" class="btn btn-outline-primary" value="Search">
+	  </form>
+	</div>
+      </div>
+     
+	<div class="row d-flex justify-content-center">
+	      {% for post in posts %}
+	      <div class="card" style="width: 18rem;">
+		<img class="card-img-top" src="{{post.featured_image.url}}" alt="Card image cap">
+		<div class="card-body">
+		  <h5 class="card-title">{{post.title}}</h5>
+		  <p class="card-text">{{post.description|slice:'150'}}</p>
+		  <a href="#" class="btn btn-primary">Expand</a>
+		</div>
+		
+	      </div>
+	      <br>
+
+	      {% endfor %}
+   
+</div>     
+
+     <br>
+{% endblock %}
