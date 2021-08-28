@@ -1,5 +1,5 @@
 # Foodie-Timathon
 No Finshed Yet.. Website For Food Lovers
 
-I am 13 year old devloper
+The styling might be off because I started to make this kinda late😅
 
