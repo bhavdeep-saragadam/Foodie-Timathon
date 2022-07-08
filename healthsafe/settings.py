@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'users.apps.UsersConfig',
     'posts.apps.PostsConfig',
-    'todolist.apps.TodolistConfig'
+   
 ]
 
 MIDDLEWARE = [

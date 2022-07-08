@@ -47,11 +47,12 @@ def register(request):
 		form = User(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect('account')
+			return redirect('login-page')
 	context = {'form': form}
 	return render(request, 'register.html',context)
-@login_required(login_url = "login")
 
+
+@login_required(login_url = "login")
 def logOut(request):
 	logout(request)
 	messages.error(request,'Successfully Logged Out!')

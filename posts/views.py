@@ -3,8 +3,10 @@ from .forms import PostForm
 from django.contrib.auth.models import User
 from .models import Post
 from main.views import home
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
+@login_required(login_url='login-page')
 def CreatePost(request):
         profile = request.user
         form = PostForm()
