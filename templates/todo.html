@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+
+
+
+{% block content %}
+
+<form method="POST" action="{% url 'todo' %}">
+	{% csrf_token %}
+{{form}}
+<input type="submit" class="btn btn-primary" />
+</form>
+
+
+{% for todo in todo %}
+<ul>
+	{% if request.user.todo_set.all %}
+	<li>{{todo.todo}}</li>
+	{% endif %}
+</ul>
+{% endfor %}
+
+{% endblock %}

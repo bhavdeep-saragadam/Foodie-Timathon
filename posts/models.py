@@ -8,7 +8,7 @@ import uuid
 class Post(models.Model):
 	owner = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL) 
 	title = models.CharField(max_length=200)
-	description = models.TextField(null=True, blank=True)
+	description = models.TextField(null=True, blank=True, max_length=300)
 	featured_image = models.ImageField(null=True, blank=True, default="default.jpg")
 	created = models.DateTimeField(auto_now_add=True)
 	id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
