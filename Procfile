@@ -1,1 +1,1 @@
-web:gunicorn healthsafe.wsgi
+web: gunicorn healthsafe.wsgi
